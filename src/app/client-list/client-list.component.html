@@ -1,0 +1,7 @@
+<h4>Client List</h4>
+<ul class="list-group">
+    <li class="list-group-item list-client" routerLinkActive="active" (click)=" onSelect(client) " *ngFor="let client of listClient.clients; let i=index; ">
+        <a [routerLink]="['/client/', client.id]">
+       {{client.name}}
+   </a>
+</ul>
