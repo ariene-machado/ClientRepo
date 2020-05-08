@@ -1,7 +1,14 @@
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" [(ngModel)]="filterText" placeholder="search text goes here" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<br>
+<hr>
+
 <h4>Client List</h4>
 <ul class="list-group">
-    <li class="list-group-item list-client" routerLinkActive="active" (click)=" onSelect(client) " *ngFor="let client of listClient.clients; let i=index; ">
-        <a [routerLink]="['/client/', client.id]">
+    <li class="list-group-item list-client" routerLinkActive="active" (click)=" onSelect(client) " *ngFor="let client of listClient.clients |filterClient:filterText">
+        <a [routerLink]="[ '/client/', client.id] ">
        {{client.name}}
    </a>
 </ul>

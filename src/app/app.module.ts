@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { ClientOverviewComponent } from './client-overview/client-overview.component'; // CLI imports router
 import { ClientContactComponent } from './client-contact/client-contact.component';
+import { SearchComponent } from './search/search.component';
+import { FilterClientPipe } from './filter-client.pipe';
 
 const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
     FooterComponent,
     ProfileComponent,
     AboutComponent,
-    ClientOverviewComponent
+    ClientOverviewComponent,
+    SearchComponent,
+    FilterClientPipe
   ],
   imports: [
     BrowserModule,
