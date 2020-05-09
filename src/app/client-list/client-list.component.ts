@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class ClientListComponent implements OnInit {
   public listClient: ClientService;
   public filterText = '';
+  public resultArray;
 
   @Input() index: number;
 
