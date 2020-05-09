@@ -14,14 +14,16 @@ export class FilterClientPipe implements PipeTransform {
     }
     const resultArray = [];
 
-    for (let client of clients){
-      if (client.name.toLowerCase() === filterString.toLowerCase()){
-        console.log("Found: =====" + JSON.stringify(client.name));
-        resultArray.push(client.name);
-        console.log("Array: =====" + resultArray);
-        console.log("String: =====" + filterString);
-      }
-    }
-    return resultArray;
+    return clients.filter(client => client.name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1)
+
+    // for (let client of clients){
+    //   if (client.name.toLowerCase() === filterString.toLowerCase()){
+    //     console.log("Found: =====" + JSON.stringify(client.name));
+    //     resultArray.push(client.name);
+    //     console.log("Array: =====" + resultArray);
+    //     console.log("String: =====" + filterString);
+    //   }
+    // }
+    // return resultArray;
   }
 }
